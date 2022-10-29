@@ -3,7 +3,7 @@ package exercises;
 import java.util.Scanner;
 
 public class CountCharsInString {
-    public static void main(String[] args) {
+    public static void main(String args[]) {
 
         Scanner sc = new Scanner(System.in);
 
@@ -15,10 +15,16 @@ public class CountCharsInString {
         message = sc.nextLine();
 
         for (int i = 0; i < message.length(); i++) {
-
             referenceChar = message.charAt(i);
-            if (referenceChar == ' ') {
+
+            if (referenceChar == ' ') { // Counts the total number of spaces found
                 totalCharacters++;
+            }
+
+            if (referenceChar == '.') { // The program ends when it encounters the '.' character.
+                break;
+            } else {
+                continue;
             }
         }
 
