@@ -1,5 +1,6 @@
 package exercises;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Collatz {
@@ -42,10 +43,8 @@ public class Collatz {
             }
         }
 
-        System.out.printf("\nCollatz list = ");
-        for (int c : collatzList) {
-            System.err.printf("%d ", c);
-        }
+        System.out.print("\nCollatz list = ");
+        System.out.println(Arrays.toString(collatzList));
         return null;
     }
 }
