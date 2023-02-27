@@ -1,10 +1,12 @@
 package exercises.stack;
 
+import exercises.stack.exceptions.StackEmptyException;
+import exercises.stack.exceptions.StackFullException;
+
 public class ProgramStack {
 
     /*
      * Stack => LIFO - Last in First out.
-     * Features:
      * Push = add
      * Pop = delete
      */
@@ -13,15 +15,26 @@ public class ProgramStack {
 
         Stack myStack = new Stack();
 
-        // Add value
-        myStack.push(15);
-        myStack.push(8);
-        myStack.push(10);
+        try {
+            myStack.push(15);
+            myStack.push(8);
+            myStack.push(10);
+            //myStack.push(13);
 
-        // Delete value
-        System.out.println(myStack.pop());
 
-        myStack.showStack();
+            myStack.pop();
+            myStack.pop();
+            //myStack.pop();
 
+
+            System.out.print("My Stack: ");
+            myStack.showStack();
+
+            //Print the deleted value
+            System.out.println("\nLast in, First out: " + myStack.pop());
+
+        } catch (StackFullException | StackEmptyException e) {
+            System.out.println("\nMessage: " + e.getMessage());
+        }
     }
 }
